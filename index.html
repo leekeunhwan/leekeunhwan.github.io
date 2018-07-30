@@ -67,11 +67,11 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            <a href="/2018/06/12/first-post/">first-post</a>
+            <a href="/2018/06/12/React/React16/">Ract 16 알아보기</a>
         </h1>
         
         <div class="article-meta clearfix">
-            <a class="article-date" href="/2018/06/12/first-post/">
+            <a class="article-date" href="/2018/06/12/React/React16/">
     
     <i class="icon-calendar"></i>
     
@@ -79,11 +79,6 @@
 </a>
 
             
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/React-React16-react-TIL/">React, React16, react, TIL</a>
-</div>
-
 
         </div>
     </header>
@@ -111,44 +106,6 @@
 <h2 id="Error-Boundaries-with-Higher-Order-Components"><a href="#Error-Boundaries-with-Higher-Order-Components" class="headerlink" title="Error Boundaries with Higher Order Components"></a>Error Boundaries with Higher Order Components</h2><p>컴포넌트에서 에러를 잡는 것은 굉장히 매력적인 일이지만 JSX 엘리먼트가 많다면 에러를 잡기 위해<br><br>그 많은 코드에다가 일일히 삼항연산자로 에러를 잡는 코드를 만드는 것은 굉장히 비효율적입니다.<br><br>그래서 있는 것이 HOC 입니다.<br></p>
 <p>개발단에서만 에러가 발생시 보이므로 사용자 경험을 좋도록 할 수 있습니다.<br></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component, Fragment &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createPortal &#125; <span class="keyword">from</span> <span class="string">"react-dom"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> BoundaryHOC = <span class="function"><span class="params">ProtectedComponent</span> =&gt;</span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Boundary</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    state = &#123;</span><br><span class="line">      hasError: <span class="literal">false</span></span><br><span class="line">    &#125;;</span><br><span class="line">    componentDidCatch = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">        hasError: <span class="literal">true</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;;</span><br><span class="line">    render() &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; hasError &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">      <span class="keyword">if</span> (hasError) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">ErrorFallback</span> /&gt;</span>;</span></span><br><span class="line"><span class="xml">      &#125; else &#123;</span></span><br><span class="line"><span class="xml">        return <span class="tag">&lt;<span class="name">ProtectedComponent</span> /&gt;</span>;</span></span><br><span class="line"><span class="xml">      &#125;</span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml">  &#125;;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">class ErrorMaker extends Component &#123;</span></span><br><span class="line"><span class="xml">  state = &#123;</span></span><br><span class="line"><span class="xml">    friends: ["jisu", "flynn", "daal", "kneeprayer"]</span></span><br><span class="line"><span class="xml">  &#125;;</span></span><br><span class="line"><span class="xml">  componentDidMount = () =&gt; &#123;</span></span><br><span class="line"><span class="xml">    setTimeout(() =&gt; &#123;</span></span><br><span class="line"><span class="xml">      this.setState(&#123;</span></span><br><span class="line"><span class="xml">        friends: undefined</span></span><br><span class="line"><span class="xml">      &#125;);</span></span><br><span class="line"><span class="xml">    &#125;, 2000);</span></span><br><span class="line"><span class="xml">  &#125;;</span></span><br><span class="line"><span class="xml">  render() &#123;</span></span><br><span class="line"><span class="xml">    const &#123; friends &#125; = this.state;</span></span><br><span class="line"><span class="xml">    return friends.map(friend =&gt; ` $&#123;friend&#125; `);</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">const PErrorMaker = BoundaryHOC(ErrorMaker);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">class Portals extends Component &#123;</span></span><br><span class="line"><span class="xml">  render() &#123;</span></span><br><span class="line"><span class="xml">    return createPortal(<span class="tag">&lt;<span class="name">Message</span> /&gt;</span>, document.getElementById("touchme"));</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">const PPortals = BoundaryHOC(Portals);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">const Message = () =&gt; "Just touched it!";</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">class ReturnTypes extends Component &#123;</span></span><br><span class="line"><span class="xml">  render() &#123;</span></span><br><span class="line"><span class="xml">    return "hello";</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">const ErrorFallback = () =&gt; "Sorry something went wrong";</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">class App extends Component &#123;</span></span><br><span class="line"><span class="xml">  render() &#123;</span></span><br><span class="line"><span class="xml">    return (</span></span><br><span class="line">      &lt;Fragment&gt;</span><br><span class="line">        &lt;ReturnTypes /&gt;</span><br><span class="line">        &lt;PPortals /&gt;</span><br><span class="line">        &lt;PErrorMaker /&gt;</span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">Fragment</span>&gt;</span></span></span><br><span class="line"><span class="xml">    );</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">export default BoundaryHOC(App);</span></span><br></pre></td></tr></table></figure>
-
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2018/06/12/hello-world/">Hello World</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="/2018/06/12/hello-world/">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2018-06-12T09:11:52.544Z" itemprop="datePublished">2018-06-12</time>
-</a>
-
-            
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
         
     </section>
