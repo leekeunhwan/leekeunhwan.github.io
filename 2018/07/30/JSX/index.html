@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="기술을 나누면서 같이 성장하고자 하는 프론트엔드 개발자 Moong2입니다."/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="JSX란?"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="기술을 나누면서 같이 성장하고자 하는 프론트엔드 개발자 Moong2입니다."/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Moong2&#39;s Dev Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://leekeunhwan.github.iohttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://leekeunhwan.github.iohttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>JSX란? - Moong2&#39;s Dev Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Moong2's Dev Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/leekeunhwan">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>JSX란?</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-07-30
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/React/">#React</a> <a href="/tags/JSX/">#JSX</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/React/">React</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2>JSX 란?</h2>
+<hr>
+<p>JSX 는 자바스크립트의 확장문법으로 JSX 를 리액트와 함께 사용하면<br><br>
+UI 가 실제로 어떻게 보일지 서술할 수 있습니다.<br><br>
+JSX 는 템플릿 언어처럼 보일 수 있지만 템플릿 언어는 아닙니다.<br><br>
+JSX 는 React 요소를 만듭니다.<br></p>
+<br>
+<h2>왜 JSX 인가?</h2>
+<hr>
+<p>React 는 렌더링 로직이 다른 UI 로직과 본질적으로 결합되어 있다는 사실을 인정합니다.<br><br>
+즉, 이벤트의 처리 과정, 시간에 따른 상태 변화, 표시할 데이터가<br><br>
+어디로부터 오는지가 렌더링 로직과 결합되어 있다는 것입니다.<br></p>
+<p>React 는 별도의 파일에 마크업과 로직을 넣어 기술 을 인위적으로 분리하는 대신,<br><br>
+둘 다 포함하는 “컴포넌트”라고 부르는 단위를 이용해 관심사를 분리 합니다.<br></p>
+<p>React 를 사용하기 위해 반드시 JSX 를 사용해야 하는 것은 아닙니다만,<br><br>
+많은 사람들이 자바스크립트 코드 안에서 UI 작업을 할 때 시각적으로 더 편하다고 느끼고 있습니다.<br><br>
+또한 JSX 를 사용하면 React 가 유용한 에러 및 경고 메시지를 표시해줄 수 있습니다.<br></p>
+<br>
+<h2>JSX 에 표현식 포함하기</h2>
+<hr>
+<p>JSX 안에 자바스크립트 표현식 을 중괄호로 묶어서 포함시킬 수 있습니다.<br><br>
+(JSX 에서 중괄호를 쓰면 중괄호 안에서 자유롭게 자바스크립트를 다룰 수 있습니다.)<br><br>
+예를 들어, 2 + 2, user.firstName, formatName(user) 를 유효한 표현식으로 표현하면 아래와 같이 표현합니다.<br></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatName</span>(<span class="params">user</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> user.firstName + <span class="string">" "</span> + user.lastName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  firstName: <span class="string">"Harper"</span>,</span><br><span class="line">  lastName: <span class="string">"Perez"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> element = &lt;h1&gt;Hello, &#123;formatName(user)&#125;!&lt;/h1&gt;;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(element, <span class="built_in">document</span>.getElementById(<span class="string">"root"</span>));</span><br></pre></td></tr></table></figure>
+<p>가독성을 좋게 하기 위해 JSX 를 여러줄로 나눴습니다.<br><br>
+필수는 아니지만, 이 작업을 수행할 때는 자동 세미콜론 삽입의 함정을 피하기 위해 괄호로 묶는 것이 좋습니다.<br></p>
+<br>
+<h2>JSX 또한 표현식이다</h2>
+<hr>
+<p>컴파일이 끝나면, JSX 표현식이 일반적인 자바스크립트 함수 호출이 되고,<br><br>
+결과적으로 자바스크립트 객체로 평가됩니다.<br><br>
+이 말은 if 문이나 for 문 내에서 JSX 를 사용할 수 있으며,<br><br>
+변수에 할당하거나 매개변수로 전달하거나 함수에서 반환할 수 있음을 의미합니다.<br></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getGreeting</span>(<span class="params">user</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (user) &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;h1&gt;Hello, &#123;formatName(user)&#125;!&lt;/h1&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &lt;h1&gt;Hello, Stranger.&lt;/h1&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br>
+<h2>JSX 어트리뷰트 정의</h2>
+<hr>
+<p>어트리뷰트에서 따옴표를 사용해서 문자열 리터럴을 정의할 수 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = &lt;div tabIndex="0" /&gt;;</span><br></pre></td></tr></table></figure>
+<p>어트리뷰트에 중괄호를 사용하면, 자바스크립트 표현식을 포함시킬 수 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = &lt;img src=&#123;user.avatarUrl&#125; /&gt;;</span><br></pre></td></tr></table></figure>
+<p>어트리뷰트에 자바스크립트 표현식을 포함시킬 때 중괄호를 따옴표로 묶지 마세요.<br><br>
+따옴표 (문자열 값인 경우) 또는 중괄호 (표현식인 경우) 중 하나를 사용해야 하며,<br><br>
+하나의 어트리뷰트에 둘 다 사용할 수 있는 것이 아닙니다.<br></p>
+<p><strong stlye="color:salmon">경고</strong><br>
+JSX 는 HTML 보다는 자바스크립트에 가깝기 때문에,<br><br>
+React DOM 은 HTML 어트리뷰트 이름 대신 camelCase 어트리뷰트 이름 컨벤션을 사용합니다.<br><br>
+예를 들어, JSX 에서 class 는 className 이 되며, tabindex 는 tabIndex 가 됩니다.<br></p>
+<h3>예를 들면 이렇게</h3>
+<table>
+<thead>
+<tr>
+<th>HTML Attribute</th>
+<th>HTML Example</th>
+<th>JSX Property</th>
+<th>JSX Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>class</td>
+<td><code>&lt;div class='fancy'&gt;...&lt;/div&gt;</code></td>
+<td>className*</td>
+<td><code>&lt;div className='fancy'&gt;...&lt;/div&gt;</code></td>
+</tr>
+<tr>
+<td>onclick</td>
+<td><code>&lt;button onclick=&quot;foo()&quot;&gt;...</code></td>
+<td>onClick*</td>
+<td><code>&lt;button onClick={foo}&gt;...</code><br><code>&lt;button onClick={() =&gt; foo(param)}&gt;...</code></td>
+</tr>
+<tr>
+<td>tabindex</td>
+<td><code>&lt;input tabindex=2 /&gt;</code></td>
+<td>tabIndex</td>
+<td><code>&lt;input tabIndex={2} /&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<h3>HTML vs Web API vs React JSX</h3>
+<table>
+<thead>
+<tr>
+<th>Difference</th>
+<th>HTML</th>
+<th>Web API</th>
+<th>React JSX</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Names of attributes / properties</td>
+<td>lower case</td>
+<td>(mostly) camelCase</td>
+<td><strong>camelCase</strong></td>
+</tr>
+<tr>
+<td>Values of attributes / properties</td>
+<td>string</td>
+<td>expression</td>
+<td>expression within <code>{ }</code></td>
+</tr>
+<tr>
+<td>Names of event handlers (on…)</td>
+<td>lower case</td>
+<td>lower case (!)</td>
+<td><strong>camelCase</strong></td>
+</tr>
+<tr>
+<td>Values of event handlers (on…)</td>
+<td>JavaScript string</td>
+<td>function expr.</td>
+<td>function expr. within <code>{ }</code></td>
+</tr>
+<tr>
+<td>Event Handlers: prevent default behaviour</td>
+<td>n/a</td>
+<td>can return <code>false</code></td>
+<td>must call <code>event.preventDefault();</code></td>
+</tr>
+<tr>
+<td>HTML Tags</td>
+<td>lower case</td>
+<td>n/a*</td>
+<td>lower case</td>
+</tr>
+<tr>
+<td>Custom Tags (Components)</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>start with <strong>capital letter</strong></td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<h2>JSX 자식 정의</h2>
+<hr>
+<p>만약 태그가 비어있다면, XML 처럼 /&gt; 를 이용해 닫아주어야 합니다. (빈태그 문법)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = &lt;img src=&#123;user.avatarUrl&#125; /&gt;;</span><br></pre></td></tr></table></figure>
+<p>JSX 태그는 자식을 가질 수 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;Hello!&lt;/h1&gt;</span><br><span class="line">    &lt;h2&gt;Good to see you here.&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<br>
+<h2>JSX 인젝션 공격 예방</h2>
+<hr>
+<p>사용자가 입력한 내용을 JSX 내에 포함시켜도 안전합니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> title = response.potentiallyMaliciousInput;</span><br><span class="line"><span class="comment">// This is safe:</span></span><br><span class="line"><span class="keyword">const</span> element = &lt;h1&gt;&#123;title&#125;&lt;/h1&gt;;</span><br></pre></td></tr></table></figure>
+<p>기본적으로, React DOM 은 렌더링 되기 전에 JSX 내에 포함된 모든 값을 이스케이프 합니다.<br><br>
+따라서 어플리케이션에 명시적으로 작성되지 않은 내용은 절대 삽입할 수 없습니다.<br><br>
+모든 것은 렌더링 되기 전에 문자열로 변환됩니다.<br><br>
+이렇게 하면 XSS (cross-site-scripting) 공격을 막을 수 있습니다.<br></p>
+<br>
+<h2>JSX 객체 표현</h2>
+<hr>
+<p>Babel 은 JSX 를 React.createElement() 호출로 컴파일합니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jsx</span></span><br><span class="line"><span class="keyword">const</span> element = &lt;h1 className="greeting"&gt;Hello, world!&lt;/h1&gt;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// js</span></span><br><span class="line"><span class="keyword">const</span> element = React.createElement(</span><br><span class="line">  <span class="string">"h1"</span>,</span><br><span class="line">  &#123; <span class="attr">className</span>: <span class="string">"greeting"</span> &#125;,</span><br><span class="line">  <span class="string">"Hello, world!"</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>React.createElement() 는 버그 없는 코드를 작성하는 데<br><br>
+도움을 주는 몇 가지 체크를 하긴 하지만, 기본적으로는 아래와 같은 객체를 생성합니다.<br></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Note: this structure is simplified</span></span><br><span class="line"><span class="keyword">const</span> element = &#123;</span><br><span class="line">  type: <span class="string">"h1"</span>,</span><br><span class="line">  props: &#123;</span><br><span class="line">    className: <span class="string">"greeting"</span>,</span><br><span class="line">    children: <span class="string">"Hello, world"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>이 객체를 “React 요소”라고 부릅니다.<br><br>
+화면에서 보고자 하는 내용에 대한 설명 내지 서술로 생각할 수 있습니다.<br><br>
+React 는 이 객체를 읽어들이고 이를 사용하여 DOM 을 만들어낸 뒤 최신 상태로 유지합니다.<br><br>
+<br></p>
+<p>팁 : ES6 및 JSX 코드가 모두 올바르게 표시되도록 선택한 편집기에 “Babel” 언어 설정 을 사용하는 것이 좋습니다.<br></p>
+<br>
+<br>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+    <hr />
+    <h3>Comments:</h3>
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=455069738292089";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <div class="fb-comments" data-href="https://leekeunhwan.github.io/2018/07/30/JSX/index.html" data-num-posts="5" data-width="100%" data-colorscheme="light"></div>
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+                        <li>
+                            <a href="https://www.facebook.com/profile.php?id=100002528956445&ref=bookmarks" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/leekeunhwan" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; 2018 Moong2. All Rights Reserved.<br></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+
+</body>
+
+</html>
