@@ -102,7 +102,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Moong2's Dev Blog</a>
+            <a class="navbar-brand" href="/">Moong2's       Dev Blog</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -118,25 +118,17 @@
                     </li>
                 
                     <li>
+                        <a href="/about">
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li>
                         <a href="/archives">
                             
                                 Archives
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/tags">
-                            
-                                Tags
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/categories">
-                            
-                                Categories
                             
                         </a>
                     </li>
@@ -215,19 +207,20 @@
                 <h2>How To Change Multiple JSX Elements Return</h2>
 <p>기존에는 JSX Elements 를 Render 함에 있어서<br>
 한개의 JSX Elements 만 가능해서 div, span 태그로 감싸서<br>
-렌더링을 하곤 하였습니다.<br></p>
+렌더링을 하곤 하였습니다.</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 이렇게 말이죠</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div className=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;h1&gt;hello world&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>하지만 React 16 에서는 React.Fragment 를 지원합니다.<br>
 span 이나 div 로 감싸게 되는 경우에는 CSS 를 할 때<br>
 꼬이거나 뭔가 문제가 생길 가능성이 있는데<br>
 React.Fragment 태그를 사용하게 되면 기존 span 과 div 로<br>
 감쌀때처럼 잘 출력이 되면서도 문제가 생길 가능성이 많이 줄어들어<br>
-좋은 기능이라고 할 수 있습니다.<br></p>
+좋은 기능이라고 할 수 있습니다.</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;React.Fragment&gt;</span><br><span class="line">        &lt;header /&gt;</span><br><span class="line">        &lt;div /&gt;</span><br><span class="line">        &lt;footer /&gt;</span><br><span class="line">      &lt;<span class="regexp">/React.Fragment&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
 <br>
 <br>
 <h2>Strings are returned.</h2>
-<p>기존의 React 에서는 오직 return 할 수 있는 것이 Component 아니면 Null 이였습니다.
+<p>기존의 React 에서는 오직 return 할 수 있는 것이<br>
+<code>Component</code> 아니면 <code>Null</code> 이였습니다.<br>
 하지만 React 16 부터는 아래처럼 string 을 return 할 수 있습니다.</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StringReturn</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"hello"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;React.Fragment&gt;</span><br><span class="line">        &lt;StringReturn /&gt;</span><br><span class="line">      &lt;<span class="regexp">/React.Fragment&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ hello</span></span><br></pre></td></tr></table></figure>
 <br>
@@ -244,15 +237,16 @@ React.Fragment 태그를 사용하게 되면 기존 span 과 div 로<br>
 <h2>Error Boundaries</h2>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ErrorMaker</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    friends: [<span class="string">"jisu"</span>, <span class="string">"flynn"</span>, <span class="string">"daal"</span>, <span class="string">"kneeprayer"</span>]</span><br><span class="line">  &#125;;</span><br><span class="line">  componentDidMount = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">        friends: <span class="literal">undefined</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; friends &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">    <span class="keyword">return</span> friends.map(<span class="function"><span class="params">friend</span> =&gt;</span> <span class="string">` <span class="subst">$&#123;friend&#125;</span> `</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ErrorFallback = <span class="function"><span class="params">()</span> =&gt;</span> <span class="string">" Sorry something went wrong"</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  state = &#123;</span><br><span class="line">    hasError: <span class="literal">false</span></span><br><span class="line">  &#125;;</span><br><span class="line">  componentDidCatch = <span class="function">(<span class="params">error, info</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      hasError: <span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;React.Fragment&gt;</span><br><span class="line">        &#123;hasError ? <span class="xml"><span class="tag">&lt;<span class="name">ErrorFallback</span> /&gt;</span> : <span class="tag">&lt;<span class="name">ErrorMaker</span> /&gt;</span>&#125;</span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">React.Fragment</span>&gt;</span></span></span><br><span class="line"><span class="xml">    );</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure>
 <p>기존에는 에러가 발생하면 리액트 앱이 죽어버렸는데<br>
-React16 에서는 componentDidCatch 를 통해 컴포넌트가 에러를 캐치하면<br>
-기존에 정상적으로 작동하는 것들은 살려두고<br>
-에러에만 대응하는 모습을 볼 수 있습니다.<br></p>
+React16 에서는 componentDidCatch 를 통해<br>
+컴포넌트가 에러를 캐치하면 기존에 정상적으로 작동하는 것들은 살려두고<br>
+에러에만 대응하는 모습을 볼 수 있습니다.</p>
 <br>
 <br>
 <h2>Error Boundaries with Higher Order Components</h2>
-<p>컴포넌트에서 에러를 잡는 것은 굉장히 매력적인 일이지만 JSX 엘리먼트가 많다면 에러를 잡기 위해<br>
-그 많은 코드에다가 일일히 삼항연산자로 에러를 잡는 코드를 만드는 것은 굉장히 비효율적입니다.<br>
-그래서 있는 것이 HOC 입니다.<br></p>
+<p>컴포넌트에서 에러를 잡는 것은 굉장히 매력적인 일이지만<br>
+JSX 엘리먼트가 많다면 에러를 잡기 위해 그 많은 코드에다가<br>
+일일히 삼항연산자로 에러를 잡는 코드를 만드는 것은 굉장히 비효율적입니다.<br>
+그래서 있는 것이 <code>HOC(고차 컴포넌트)</code> 입니다.</p>
 <p>개발단에서만 에러가 발생시 보이므로 사용자 경험을 좋도록 할 수 있습니다.<br></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component, Fragment &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createPortal &#125; <span class="keyword">from</span> <span class="string">"react-dom"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> BoundaryHOC = <span class="function"><span class="params">ProtectedComponent</span> =&gt;</span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Boundary</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    state = &#123;</span><br><span class="line">      hasError: <span class="literal">false</span></span><br><span class="line">    &#125;;</span><br><span class="line">    componentDidCatch = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">        hasError: <span class="literal">true</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;;</span><br><span class="line">    render() &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; hasError &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">      <span class="keyword">if</span> (hasError) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">ErrorFallback</span> /&gt;</span>;</span></span><br><span class="line"><span class="xml">      &#125; else &#123;</span></span><br><span class="line"><span class="xml">        return <span class="tag">&lt;<span class="name">ProtectedComponent</span> /&gt;</span>;</span></span><br><span class="line"><span class="xml">      &#125;</span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml">  &#125;;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">class ErrorMaker extends Component &#123;</span></span><br><span class="line"><span class="xml">  state = &#123;</span></span><br><span class="line"><span class="xml">    friends: ["jisu", "flynn", "daal", "kneeprayer"]</span></span><br><span class="line"><span class="xml">  &#125;;</span></span><br><span class="line"><span class="xml">  componentDidMount = () =&gt; &#123;</span></span><br><span class="line"><span class="xml">    setTimeout(() =&gt; &#123;</span></span><br><span class="line"><span class="xml">      this.setState(&#123;</span></span><br><span class="line"><span class="xml">        friends: undefined</span></span><br><span class="line"><span class="xml">      &#125;);</span></span><br><span class="line"><span class="xml">    &#125;, 2000);</span></span><br><span class="line"><span class="xml">  &#125;;</span></span><br><span class="line"><span class="xml">  render() &#123;</span></span><br><span class="line"><span class="xml">    const &#123; friends &#125; = this.state;</span></span><br><span class="line"><span class="xml">    return friends.map(friend =&gt; ` $&#123;friend&#125; `);</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">const PErrorMaker = BoundaryHOC(ErrorMaker);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">class Portals extends Component &#123;</span></span><br><span class="line"><span class="xml">  render() &#123;</span></span><br><span class="line"><span class="xml">    return createPortal(<span class="tag">&lt;<span class="name">Message</span> /&gt;</span>, document.getElementById("touchme"));</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">const PPortals = BoundaryHOC(Portals);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">const Message = () =&gt; "Just touched it!";</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">class ReturnTypes extends Component &#123;</span></span><br><span class="line"><span class="xml">  render() &#123;</span></span><br><span class="line"><span class="xml">    return "hello";</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">const ErrorFallback = () =&gt; "Sorry something went wrong";</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">class App extends Component &#123;</span></span><br><span class="line"><span class="xml">  render() &#123;</span></span><br><span class="line"><span class="xml">    return (</span></span><br><span class="line">      &lt;Fragment&gt;</span><br><span class="line">        &lt;ReturnTypes /&gt;</span><br><span class="line">        &lt;PPortals /&gt;</span><br><span class="line">        &lt;PErrorMaker /&gt;</span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">Fragment</span>&gt;</span></span></span><br><span class="line"><span class="xml">    );</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">export default BoundaryHOC(App);</span></span><br></pre></td></tr></table></figure>
 
@@ -264,22 +258,13 @@ React16 에서는 componentDidCatch 를 통해 컴포넌트가 에러를 캐치�
             
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     
-
-
     <hr />
     <h3>Comments:</h3>
-    <div id="fb-root"></div>
-    <script>
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=455069738292089";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 
-    <div class="fb-comments" data-href="https://leekeunhwan.github.io/2018/06/12/React16/index.html" data-num-posts="5" data-width="100%" data-colorscheme="light"></div>
+
 
                 </div>
             
@@ -345,6 +330,18 @@ React16 에서는 componentDidCatch 를 통해 컴포넌트가 에러를 캐치�
 <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 
 <!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'moong2sdevblog';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
