@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Moong2&#39;s Blog"/>
+        <meta property="og:title" content="Elements_Render"/>
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>React - Moong2&#39;s Blog</title>
+    <title>Elements_Render - Moong2&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -165,75 +165,140 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3f1d38bbdda690e28a81673c06325075&auto=format&fit=crop&w=3289&q=80')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>#React</h1>
+                <div class="post-heading">
+                    <h1>Elements_Render</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-08-01
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/React/">#React</a> <a href="/tags/Elements-Render/">#Elements_Render</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/React/">React</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/08/01/Elements-Render/">
-        <h1 class="post-title archive">
-            Elements_Render
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-01
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/07/30/JSX/">
-        <h1 class="post-title archive">
-            JSX란?
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-07-30
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2>요소 렌더링</h2>
+<hr>
+<p>요소는 <code>React 앱에서 가장 작은 단위의 재료</code>입니다.<br>
+요소는 화면에 표시하고자 하는 내용을 서술합니다.<br></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = &lt;h1&gt;Hello, world&lt;/h1&gt;;</span><br></pre></td></tr></table></figure>
+<p>브라우저 DOM 요소와 달리,<br>
+React 요소는 순수한 객체이며 생성 비용이 저렴합니다.<br><br>
+React DOM 라이브러리는 DOM 갱신 작업을 관장하며,<br>
+React 요소와 DOM 이 일치하도록 만듭니다.<br></p>
+<br>
+<h2>DOM 에서 요소 렌더링하기</h2>
+<hr>
+<p>HTML 파일 어딘가에 <code>&lt;div&gt;</code> 가 있다고 가정해봅시다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>React DOM 에 의해 관리되는 모든 것이 이 요소 안에 들어가므로,<br>
+이걸 <code>“루트” DOM 노드</code>라고 부릅니다.</p>
+<p>React 로 구축한 어플리케이션은 보통 하나의 루트 DOM 노드를 가집니다.<br><br>
+React 를 기존 앱에 통합하는 경우,<br>
+원하는 만큼의 여러 루트 DOM 노드를 만들 수도 있습니다.<br><br>
+React 요소를 루트 DOM 노드에 렌더링하고 싶다면,<br>
+<code>ReactDOM.render()</code> 에 둘 다 넘겨주면 됩니다.<br></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">ReactDOM.render(element, <span class="built_in">document</span>.getElementById(<span class="string">"root"</span>));</span><br></pre></td></tr></table></figure>
+<br>
+<h2>렌더링된 요소 업데이트</h2>
+<hr>
+<p>React 요소는 변경 불가능 합니다. 한번 요소를 만들었다면,<br>
+그 자식이나 어트리뷰트를 변경할 수 없습니다.<br>
+요소는 영화의 단일 프레임에 비유할 수 있습니다.</p>
+<p>즉, 요소는 특정 시점의 UI 를 표현할 뿐입니다.<br>
+<br></p>
+<p>이제까지 배운 것만 가지고 UI 를 갱신할 수 있는 유일한 방법은<br>
+새로운 요소를 만들어서 이 요소를 <code>ReactDOM.render()</code> 로 전달하는 것입니다.<br></p>
+<p>깜빡이는 시계를 구현한 예제를 살펴봅시다.<br></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> element = (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;Hello, world!<span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">      &lt;h2&gt;It is &#123;<span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleTimeString()&#125;.&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">  ReactDOM.render(element, <span class="built_in">document</span>.getElementById(<span class="string">"root"</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setInterval(tick, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<p>이 예제는 <code>setInterval()</code> 콜백을 이용해 매 초마다<br>
+<code>ReactDOM.render()</code> 를 호출하고 있습니다.<br><br>
+하지만 대부분의 React 어플리케이션은<br>
+<code>ReactDOM.render()</code> 를 <b style="color:salmon;">한 번만</b> 호출합니다<br></p>
+<br>
+<h2>React 는 꼭 필요한 부분만 갱신합니다</h2>
+<hr>
+<p>React DOM 은 요소 및 그 자식을 이전 버전과 비교하고,<br>
+DOM 을 원하는 상태로 만드는 데 필요한 DOM 업데이트만 적용합니다.<br>
+<strong style="color:salmon;">(Virtual DOM)</strong></p>
+<p>마지막 예제 를 개발자 도구로 관찰해보면 알 수 있습니다.</p>
+<img src="./../images/react_clock.gif" width="400">
+<p>매 깜빡임마다 전체 UI 트리를 서술하는 요소를 만들었지만,<br>
+내용이 변경된 텍스트 노드만이 React DOM 에 의해서 업데이트 됩니다.</p>
+<p>우리의 경험상,<br>
+<code>‘시간 경과에 따라 UI 를 어떻게 변경할지’</code>를 생각하는 것이 아니라<br>
+<code>‘특정 순간에 UI 가 어떻게 보여져야 할지’</code>에 대해 생각하면,<br>
+수많은 종류의 버그를 없앨 수 있습니다.<br></p>
+<p>[Virtual DOM 은 가상의 DOM 으로 실제 DOM 과 비교 알고리즘을 통해<br>
+변경부분을 파악하고 변경 부분만 렌더링 해줍니다.]<br><br>
+<img src="./../images/virtual_DOM.png" width="500"></p>
+<br>
+<br>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2018/06/12/React16/">
-        <h1 class="post-title archive">
-            React 16의 특징
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-06-12
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
             
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
@@ -301,7 +366,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
