@@ -99,7 +99,7 @@ hr.small {
 
 .navbar-custom .nav li a {
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 800;
   letter-spacing: 1px;
   text-decoration: none;
@@ -259,7 +259,7 @@ hr.small {
 
 @media only screen and (min-width: 768px) {
   .intro-header .post-heading h1 {
-    font-size: 55px;
+    font-size: 45px;
   }
   .intro-header .post-heading .subheading {
     font-size: 30px;

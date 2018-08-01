@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="기술을 나누면서 같이 성장하고자 하는 프론트엔드 개발자 Moong2입니다."/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Moong2"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Event_Handling (이벤트 제어하기)"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="기술을 나누면서 같이 성장하고자 하는 프론트엔드 개발자 Moong2입니다."/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Moong2&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://leekeunhwan.github.iohttps://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=3f1d38bbdda690e28a81673c06325075&amp;auto=format&amp;fit=crop&amp;w=3289&amp;q=80"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://leekeunhwan.github.iohttps://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=3f1d38bbdda690e28a81673c06325075&amp;auto=format&amp;fit=crop&amp;w=3289&amp;q=80"/>
+    
+
+    <!-- Title -->
+    
+    <title>Event_Handling (이벤트 제어하기) - Moong2&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Moong2's Dev Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about">
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/leekeunhwan">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3f1d38bbdda690e28a81673c06325075&auto=format&fit=crop&w=3289&q=80')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Event_Handling (이벤트 제어하기)</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-08-01
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/React/">#React</a> <a href="/tags/Event/">#Event</a> <a href="/tags/Event-Handling/">#Event Handling</a> <a href="/tags/TIL/">#TIL</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/React/">React</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2>이벤트 제어하기</h2>
+<hr>
+<p>React 요소의 이벤트를 제어하는 것은<br>
+DOM 요소 이벤트를 제어하는 것과 매우 유사합니다.</p>
+<p>다만 몇가지 문법적인 차이가 있습니다.</p>
+<ul>
+<li><code>React 이벤트</code>는 소문자 대신 <code>camelCase 를 사용</code>합니다.</li>
+<li><code>JSX 에</code> 문자열 대신 <code>함수를 전달</code>합니다.</li>
+</ul>
+<br>
+<p>예를 들어 HTML 에서 이벤트를 넣을 때는 이렇게 합니다</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=<span class="string">"activateLasers()"</span>&gt;Activate Lasers&lt;<span class="regexp">/button&gt;</span></span><br></pre></td></tr></table></figure>
+<p>React 에서는 조금 다릅니다</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick=&#123;activateLasers&#125;&gt;Activate Lasers&lt;<span class="regexp">/button&gt;</span></span><br></pre></td></tr></table></figure>
+<p>다른 차이점으로는 React 에서 기본 동작을 막기 위해<br>
+false 를 반환할 수 없다는 것입니다.</p>
+<p>반드시 명시적으로 <code>preventDefault()</code> 를 호출해야 합니다.<br>
+예를 들어 HTML 에서 새로운 페이지를 여는 기본 링크 동작을 막으려면<br>
+아래와 같이 작성할 수 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">"#"</span> onclick=<span class="string">"console.log('The link was clicked.'); return false"</span>&gt;</span><br><span class="line">  Click me</span><br><span class="line">&lt;<span class="regexp">/a&gt;</span></span><br></pre></td></tr></table></figure>
+<p>React 에서는 대신 이렇게 작성합니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ActionLink</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handleClick</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    e.preventDefault();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"The link was clicked."</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;a href=<span class="string">"#"</span> onClick=&#123;handleClick&#125;&gt;</span><br><span class="line">      Click me</span><br><span class="line">    &lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>여기서 e 는 합성 이벤트입니다.<br>
+React 는 W3C spec 에 따라 이런 합성 이벤트를 정의하므로,<br>
+브라우저 간 호환성을 걱정할 필요는 없습니다.<br>
+더 자세한 사항은 <a href="https://reactjs.org/docs/events.html" style="color:salmon;" target="_blank" rel="noopener">SyntheticEvent 레퍼런스 가이드</a>를 보시길 바랍니다.</p>
+<p>React 를 사용할 때, (일반적인 경우) 리스너를 추가하기 위해<br>
+DOM 요소가 생성된 후 addEventListener 를 호출할 필요가 없습니다.<br>
+대신 요소를 처음 렌더링할 때 리스너를 같이 넘겨주세요.</p>
+<p>ES6 class 를 이용해 컴포넌트를 정의할 때,<br>
+<code>이벤트 핸들러를 만들기 위해 보통 클래스 메서드를 사용</code>합니다.</p>
+<p>예를 들어, 아래 Toggle 컴포넌트는 “ON” 과 “OFF” state 를<br>
+유저가 토글할 수 있게 하는 버튼을 렌더링합니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 다른 곳에 넘겨주는 함수는 가급적 화살표함수로 만들어서 사용하는 것이 좋습니다.</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Toggle</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123; <span class="attr">isToggleOn</span>: <span class="literal">true</span> &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 콜백에서 `this`가 제대로 동작하게 만들려면 아래 바인딩을 꼭 해주어야 합니다.</span></span><br><span class="line">    <span class="keyword">this</span>.handleClick = <span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleClick() &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(<span class="function"><span class="params">prevState</span> =&gt;</span> (&#123;</span><br><span class="line">      isToggleOn: !prevState.isToggleOn</span><br><span class="line">    &#125;));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;button onClick=&#123;<span class="keyword">this</span>.handleClick&#125;&gt;</span><br><span class="line">        &#123;<span class="keyword">this</span>.state.isToggleOn ? <span class="string">"ON"</span> : <span class="string">"OFF"</span>&#125;</span><br><span class="line">      &lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">ReactDOM.render(&lt;Toggle /</span>&gt;, <span class="built_in">document</span>.getElementById(<span class="string">"root"</span>));</span><br></pre></td></tr></table></figure>
+<p>JSX 콜백에서 this 의 의미에 대해 주의해야합니다.<br>
+<code>자바스크립트에서 클래스 메서드는 기본적으로 바인딩 되지 않습니다.</code><br>
+만약 this.handleClick 바인드를 잊은채로 onClick 에 전달하면,<br>
+this 는 함수가 실제로 호출될 때 undefined 로 취급됩니다.</p>
+<p>이건 React 에서만 해당되는 동작이 아닙니다.<br>
+자바스크립트의 함수의 동작 방식 자체가 이렇습니다.<br>
+일반적으로 onClick={this.handleClick} 처럼 () 없이 메서드를 참조하면,<br>
+그 <code>메서드를 bind 해야합니다.</code></p>
+<p>만약 bind 를 호출하는 게 귀찮은 경우,<br>
+이 문제를 해결할 수 있는 두 가지 방법이 있습니다.</p>
+<p>만약 실험적 기능인 <code>퍼블릭 클래스 필드 문법 을 사용하고 있다면,</code><br>
+콜백을 올바르게 바인딩하기 위해 <code>클래스 필드를 사용할 수 있습니다.</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LoggingButton</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 이 문법은 handleClick 안에서 `this`가 제대로 바인딩됨을 보장합니다.</span></span><br><span class="line">  <span class="comment">// 경고: 이는 *실험적인* 문법입니다.</span></span><br><span class="line">  handleClick = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"this is:"</span>, <span class="keyword">this</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleClick&#125;</span>&gt;</span>Click me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Create React App 을 사용하고 있다면<br>
+이 문법을 바로 사용할 수 있습니다.</p>
+<p>만약 <code>클래스 필드 문법을 사용하고 싶지 않다면,</code><br>
+<code>콜백에서 arrow function 을 사용</code>할 수도 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LoggingButton</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  handleClick() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"this is:"</span>, <span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="comment">// This syntax ensures `this` is bound within handleClick</span></span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;e</span> =&gt;</span> this.handleClick(e)&#125;&gt;Click me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>이 문법의 문제점은 LogginButton 을 렌더링할 때마다<br>
+서로 다른 콜백이 만들어지는 것입니다.</p>
+<p>대부분의 경우에서 크게 문제는 없습니다.</p>
+<p>하지만 <code>하위 컴포넌트에 콜백을 prop 으로서 전달하는 경우,</code><br>
+이 컴포넌트는 <code>불필요한 렌더링을 더 일으킬 수 있습니다.</code></p>
+<p>이런 종류의 성능 문제를 피하기 위해,<br>
+<code>보통 생섬자 함수에서 바인딩하거나 클래스 필드 문법을 사용하는 걸 권장</code>합니다.</p>
+<br>
+<h2>이벤트 핸들러에 인수 전달하기</h2>
+<hr>
+<p>반복문 안에서 이벤트 핸들러에 추가 파라미터를 전달하고 싶은 경우가 많습니다.<br>
+예를 들어, 만약 id 가 행 ID 라면, 아래처럼 전달할 수 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onClick=&#123;(e) =&gt; <span class="keyword">this</span>.deleteRow(id, e)&#125;&gt;Delete Row&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;button onClick=&#123;this.deleteRow.bind(this, id)&#125;&gt;Delete Row&lt;/</span>button&gt;</span><br></pre></td></tr></table></figure>
+<p>위 두 라인은 동일하며,<br>
+<code>arrow functions</code> 과 <code>Function.prototype.bind</code> 를 각각 사용하고 있습니다.</p>
+<p>두 경우 모두, React 이벤트를 나타내는 e 인수는<br>
+ID 뒤에 두 번째 인수로 전달됩니다.</p>
+<p><code>arrow function 을 사용하면 ID 를 명시적으로 전달</code>해야 하지만,<br>
+<code>bind 를 사용하면 추가로 넘겨준 인수가 자동으로 전달</code>됩니다.</p>
+<br>
+<br>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+                        <li>
+                            <a href="https://www.facebook.com/profile.php?id=100002528956445&ref=bookmarks" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/leekeunhwan" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; 2018 Moong2. All Rights Reserved.<br></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'moong2sdevblog';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+</body>
+
+</html>

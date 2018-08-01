@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="기술을 나누면서 같이 성장하고자 하는 프론트엔드 개발자 Moong2입니다."/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Moong2"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Component_&amp;_Props (컴포넌트와 프롭)"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="기술을 나누면서 같이 성장하고자 하는 프론트엔드 개발자 Moong2입니다."/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Moong2&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://leekeunhwan.github.iohttps://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=3f1d38bbdda690e28a81673c06325075&amp;auto=format&amp;fit=crop&amp;w=3289&amp;q=80"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://leekeunhwan.github.iohttps://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=3f1d38bbdda690e28a81673c06325075&amp;auto=format&amp;fit=crop&amp;w=3289&amp;q=80"/>
+    
+
+    <!-- Title -->
+    
+    <title>Component_&amp;_Props (컴포넌트와 프롭) - Moong2&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Moong2's Dev Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about">
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/leekeunhwan">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3f1d38bbdda690e28a81673c06325075&auto=format&fit=crop&w=3289&q=80')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Component_&_Props (컴포넌트와 프롭)</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-08-01
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/React/">#React</a> <a href="/tags/Component/">#Component</a> <a href="/tags/Props/">#Props</a> <a href="/tags/TIL/">#TIL</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/React/">React</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2>컴포넌트와 props</h2>
+<hr>
+<p>컴포넌트를 통해 UI 를 독립적이고 재사용 가능한 부분으로 분리하고,<br>
+각 부분을 독립적으로 생각할 수 있습니다.<br></p>
+<p>개념상 컴포넌트는 자바스크립트 함수와 비슷합니다.<br>
+“props”이라 불리는 임의의 입력을 받아들이고,<br>
+화면에 무엇이 표시되어야 하는지를 서술하는 React 요소를 반환합니다.</p>
+<br>
+<h2>함수형 및 클래스 컴포넌트</h2>
+<hr>
+<p>컴포넌트를 정의하는 가장 간단한 방법은 자바스크립트 함수를 작성하는 것입니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Welcome</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;props.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>이 함수는 유효한 React 컴포넌트로,<br>
+<code>“props”</code> (properties 를 나타냄) 객체 인수를 받고 <code>React 요소를 반환</code>합니다.<br><br>
+이러한 컴포넌트는 말 그대로 자바스크립트 함수이기 때문에<br>
+<code>“함수형 컴포넌트”</code>라고 부릅니다.<br>
+<br></p>
+<p>컴포넌트를 정의하기 위해 ES6 class 를 사용할 수도 있습니다.<br></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Welcome</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;this.props.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>위의 두 컴포넌트는 React 관점에서 봤을 때 동일한 기능을 갖습니다.<br></p>
+<p>클래스는 몇가지 기능을 더 가지고 있는데, 이는 다음 섹션 에서 다룹니다.<br>
+그 때까지 간결함을 유지하기 위해 함수형 컴포넌트를 사용할 것입니다.<br></p>
+<br>
+<h2>컴포넌트 렌더링</h2>
+<hr>
+<p>이전에는 DOM 태그를 나타내는 React 요소만 있었습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">div</span> /&gt;</span>;</span></span><br></pre></td></tr></table></figure>
+<p>그러나, 는 사용자 정의 컴포넌트를 나타낼 수도 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">Welcome</span> <span class="attr">name</span>=<span class="string">"Sara"</span> /&gt;</span>;</span></span><br></pre></td></tr></table></figure>
+<p>React 가 사용자 정의 컴포넌트를 나타내는 요소를 처리할 때는,<br>
+<b style="color:salmon">JSX 어트리뷰트를 하나의 객체를 통해 컴포넌트로 전달</b>합니다.<br>
+이 객체를 <code>“props”</code> 라고 부릅니다.<br>
+<br></p>
+<p>예를 들어, 이 코드는 “Hello, Sara”를 페이지에 렌더링합니다.<br></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Welcome</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;props.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">Welcome</span> <span class="attr">name</span>=<span class="string">"Sara"</span> /&gt;</span>;</span></span><br><span class="line"><span class="xml">ReactDOM.render(element, document.getElementById("root"));</span></span><br></pre></td></tr></table></figure>
+<br>
+<ol>
+<li>
+<p><code>&lt;Welcome name=&quot;Sara&quot; /&gt;</code> 요소로 <code>ReactDOM.render()</code> 를 호출합니다.</p>
+</li>
+<li>
+<p>React 가 <code>{name: 'Sara'}</code> 를 props 로 하여 Welcome 컴포넌트를 호출합니다.</p>
+</li>
+<li>
+<p>Welcome 컴포넌트가 그 결과로 <code>&lt;h1&gt;Hello, Sara&lt;/h1&gt;</code> 요소를 반환합니다.</p>
+</li>
+<li>
+<p>React DOM 이 <code>&lt;h1&gt;Hello, Sara&lt;/h1&gt;</code> 과 일치하도록<br>
+DOM 을 효율적으로 업데이트합니다.<br>
+<br></p>
+</li>
+</ol>
+<p><strong style="color:salmon">[경고]</strong><br><br>
+컴포넌트 이름은 항상 대문자로 시작하도록 지으세요.<br>
+(소문자는 html 로 인식합니다.)<br><br>
+예를 들어 <code>&lt;div /&gt;</code> 는 DOM 태그를 나타내지만<br>
+<code>&lt;Welcome /&gt;</code> 은 컴포넌트를 나타내며 스코프에 Welcome 이 있어야 합니다.<br></p>
+<br>
+<h2>컴포넌트 조립하기</h2>
+<hr>
+<p><strong style="color:salmon">컴포넌트의 출력에서 다른 컴포넌트를 가져와 사용할 수 있습니다.</strong><br>
+이를 통해 모든 세부 레벨에서 동일한 컴포넌트 추상화를 사용할 수 있습니다.<br>
+React 앱에서 버튼, 폼, 다이얼로그, 스크린 같은 것들은<br>
+모두 일반적으로 컴포넌트로 표현됩니다.<br>
+<br></p>
+<p>예를 들어, Welcome 을 여러번 렌더링하는 App 컴포넌트를 만들 수 있습니다.<br></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Welcome</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, &#123;props.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;Welcome name=<span class="string">"Sara"</span> /&gt;</span><br><span class="line">      &lt;Welcome name=<span class="string">"Cahal"</span> /&gt;</span><br><span class="line">      &lt;Welcome name=<span class="string">"Edite"</span> /&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">ReactDOM.render(&lt;App /</span>&gt;, <span class="built_in">document</span>.getElementById(<span class="string">"root"</span>));</span><br></pre></td></tr></table></figure>
+<p>일반적으로, 새롭게 작성되는 React 앱은 단일 App 컴포넌트를 최상위에 둡니다.<br>
+그러나 기존 앱에 React 를 도입하는 경우, Button 같은 작은 컴포넌트부터<br>
+덩치를 키워나가기 시작하여 점차적으로 뷰 계층의 최상단으로 나아갈 수 있습니다.</p>
+<br>
+<h2>컴포넌트 추출</h2>
+<hr>
+<p>컴포넌트를 더 작은 컴포넌트로 쪼개는 것을 두려워하지 마십시오.<br>
+예를 들어, Comment 컴포넌트를 살펴봅시다.<br></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Comment</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"Comment"</span>&gt;</span><br><span class="line">      &lt;div className=<span class="string">"UserInfo"</span>&gt;</span><br><span class="line">        &lt;img</span><br><span class="line">          className=<span class="string">"Avatar"</span></span><br><span class="line">          src=&#123;props.author.avatarUrl&#125;</span><br><span class="line">          alt=&#123;props.author.name&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;div className=<span class="string">"UserInfo-name"</span>&gt;&#123;props.author.name&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">      &lt;div className=<span class="string">"Comment-text"</span>&gt;&#123;props.text&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;div className="Comment-date"&gt;&#123;formatDate(props.date)&#125;&lt;/</span>div&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>이 컴포넌트는 author (객체), text (문자열), date (Date 객체)를 props 로 받고,<br>
+소셜 미디어 웹사이트의 댓글을 나타냅니다.</p>
+<p>이 컴포넌트는 중첩 때문에 변경하기 까다로울 수 있으며,<br>
+각 파트를 다시 사용하기도 어렵습니다.<br>
+여기에서 몇가지 컴포넌트를 추출해봅시다.</p>
+<p>먼저, Avatar 를 추출할 수 있습니다.<br></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Avatar</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;img className=<span class="string">"Avatar"</span> src=&#123;props.user.avatarUrl&#125; alt=&#123;props.user.name&#125; /&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Avatar 는 자기가 Comment 내에서 렌더링되는 지를 알고 있을 필요가 없습니다.<br>
+따라서 author 대신 user 라는 더 일반적인 이름을 사용합니다.</p>
+<p>속성 이름을 지을 때는,<br>
+컴포넌트가 사용되는 상황이 아닌 컴포넌트 그 자체만 생각하는 것이 좋습니다.<br></p>
+<p>이제 Comment 를 약간 단순화시킬 수 있습니다.<br></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Avatar를 분할한 상태</span></span><br><span class="line"><span class="comment">// Comment의 기능이 많다는 것을 알 수 있습니다.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Comment</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"Comment"</span>&gt;</span><br><span class="line">      &lt;div className=<span class="string">"UserInfo"</span>&gt;</span><br><span class="line">        &lt;Avatar user=&#123;props.author&#125; /&gt;</span><br><span class="line">        &lt;div className=<span class="string">"UserInfo-name"</span>&gt;&#123;props.author.name&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">      &lt;div className=<span class="string">"Comment-text"</span>&gt;&#123;props.text&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;div className="Comment-date"&gt;&#123;formatDate(props.date)&#125;&lt;/</span>div&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>이어서, 유저의 이름 옆에 Avartar 를 렌더링하는 UserInfo 컴포넌트를 추출해봅시다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 기능 분할 - userInfo</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UserInfo</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"UserInfo"</span>&gt;</span><br><span class="line">      &lt;Avatar user=&#123;props.user&#125; /&gt;</span><br><span class="line">      &lt;div className=<span class="string">"UserInfo-name"</span>&gt;&#123;props.user.name&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>이제 Comment 가 더 단순해졌습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 정말 Comment만 남도록 분리해서 단순해졌습니다.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Comment</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"Comment"</span>&gt;</span><br><span class="line">      &lt;UserInfo user=&#123;props.author&#125; /&gt;</span><br><span class="line">      &lt;div className=<span class="string">"Comment-text"</span>&gt;&#123;props.text&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;div className="Comment-date"&gt;&#123;formatDate(props.date)&#125;&lt;/</span>div&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>컴포넌트를 추출하는 건 처음에는 쓸데없는 일처럼 보일 수 있지만,<br>
+재사용 가능한 컴포넌트 팔레트를 사용하면 큰 앱에서 그 진가를 발휘합니다.</p>
+<p>적당한 기준을 잡아보자면,<br>
+UI 의 일부분이 여러 번 사용되거나 (Button, Panel, Avatar),<br>
+자체적으로 충분히 복잡하다면 (App, FeedStory, Comment),<br>
+그것들은 재사용 가능한 컴포넌트가 될 좋은 후보입니다.</p>
+<br>
+<h2>Props 는 읽기전용입니다</h2>
+<hr>
+<p>컴포넌트를 함수나 클래스 중 어떤 걸로 선언했건,<br>
+자기 자신의 props 를 수정할 수 없습니다.<br>
+sum 함수를 살펴봅시다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>위와 같은 함수는 입력을 변경하려 하지 않고,<br>
+<code>동일한 입력에 대해 항상 동일한 결과를 반환하기 때문에 “순수” 함수</code>라고 불립니다.</p>
+<p>위와 반대로, 이 함수는 입력을 변경하기 때문에 순수하지 않습니다.<br></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">withdraw</span>(<span class="params">account, amount</span>) </span>&#123;</span><br><span class="line">  account.total -= amount;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>React 는 매우 유연하지만 한가지 엄격한 규칙을 갖고 있습니다.<br>
+모든 React 컴포넌트는 props 에 대해서는 순수 함수처럼 동작해야합니다.<br></p>
+<br>
+<p><strong style="color:salmon">[순수 함수란?]</strong></p>
+<p>함수는 주어진 입력으로 계산하는 것 이외에<br>
+프로그램의 실행에 영향을 미치지 않아야 합니다. (부수효과 X)<br>
+이러한 함수를 <code>순수 함수</code>라고 합니다.<br></p>
+<p>예를 들어, count, length 함수는 임의의 문자열이나 배열에 대해서<br>
+항상 같은 길이를 반환하며, 그 외의 일은 일어나지 않습니다.<br></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">func plusNumber(num: Int) -&gt; (Int -&gt; Int) &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123; x <span class="keyword">in</span></span><br><span class="line">    <span class="keyword">return</span> x + num</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> addFive = plusNumber(<span class="number">5</span>)</span><br><span class="line">addFive(<span class="number">1</span>)	<span class="comment">// 5</span></span><br><span class="line">addFive(<span class="number">10</span>)	<span class="comment">// 15</span></span><br></pre></td></tr></table></figure>
+<p>위의 코드에서 익명함수를 만들어 사용하게 되고 어떤 값이 들어오던지<br>
+5 를 더하여 반환하게 되므로 부수 효과가 발생하지 않습니다.</p>
+<p>순수 함수의 참조 투명성(referential transparency, RT)으로 입력 값이 같으면<br>
+결과 값도 같다면 표현식은 참조에 투명하다(referentially transparent)라고 합니다.<br>
+표현식 f(x)가 참조에 투명한 모든 x 에 대해 참조가 투명하다면<br>
+함수 f 는 순수하다(pure)라고 합니다.</p>
+<p>따라서 <code>코드의 블록을 이해하기 위해 일련의 상태 갱신을 따라갈 필요가 없고 국소 추론(local reasoning)만으로도 코드를 이해</code>할 수 있습니다.</p>
+<p><code>모듈적인 프로그램은 독립적으로 재사용할 수 있는 구성요소(component)로 구성</code>됩니다.</p>
+<p>따라서 순수 함수는 입력과 결과가 분리되어 있으며,<br>
+어떻게 사용되는지에 대해서는 전혀 신경쓰지 않아도 되므로 재사용성이 높아집니다.</p>
+<br>
+<br>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+                        <li>
+                            <a href="https://www.facebook.com/profile.php?id=100002528956445&ref=bookmarks" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/leekeunhwan" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; 2018 Moong2. All Rights Reserved.<br></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'moong2sdevblog';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+</body>
+
+</html>
