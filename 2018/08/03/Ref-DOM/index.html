@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="기술을 나누면서 같이 성장하고자 하는 프론트엔드 개발자 Moong2입니다."/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Moong2"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Ref_&amp;_DOM"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="기술을 나누면서 같이 성장하고자 하는 프론트엔드 개발자 Moong2입니다."/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Moong2&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://leekeunhwan.github.iohttps://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=3f1d38bbdda690e28a81673c06325075&amp;auto=format&amp;fit=crop&amp;w=3289&amp;q=80"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://leekeunhwan.github.iohttps://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=3f1d38bbdda690e28a81673c06325075&amp;auto=format&amp;fit=crop&amp;w=3289&amp;q=80"/>
+    
+
+    <!-- Title -->
+    
+    <title>Ref_&amp;_DOM - Moong2&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Moong2's Dev Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about">
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/leekeunhwan">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3f1d38bbdda690e28a81673c06325075&auto=format&fit=crop&w=3289&q=80')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Ref_&_DOM</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-08-03
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/React/">#React</a> <a href="/tags/TIL/">#TIL</a> <a href="/tags/Ref/">#Ref</a> <a href="/tags/DOM/">#DOM</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/React/">React</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2>Ref 와 DOM</h2>
+<hr>
+<p><code>Ref 는 render 메소드에서 생성된 DOM 노드 혹은</code><br>
+<code>React 엘리먼트 객체에 접근할 수 있는 방법을 제공</code>합니다.</p>
+<p><code>전형적인 React 데이터 흐름</code>에서는,<br>
+<code>부모 컴포넌트에서 자식 엘리먼트를 조작하기 위해 props 만을 사용</code>합니다.<br>
+즉, <code>자식 엘리먼트를 수정하기 위해 새 prop 을 가지고 다시 렌더링을 해줍니다.</code></p>
+<p>하지만 가끔은 전형적인 데이터 흐름 밖에서<br>
+자식을 명령형으로 변경해야 할 필요가 있습니다.<br>
+여기서 변경될 자식이란 React 컴포넌트의 인스턴스일 수도 있고,<br>
+DOM 엘리먼트일 수도 있습니다.<br>
+React 는 양쪽 경우 모두를 위한 비상구를 제공합니다.</p>
+<p><strong style="color:salmon">언제 ref 를 사용해야 하나요?</strong></p>
+<p>Ref 의 바람직한 사용 사례로 다음과 같은 것을 들 수 있습니다</p>
+<ul>
+<li>포커스, 텍스트 선택영역, 혹은 미디어의 재생을 관리할 때</li>
+<li>명령형 애니메이션을 발동시킬 때</li>
+<li>서드파티 DOM 라이브러리를 통합할 때</li>
+</ul>
+<p><code>선언적으로 할 수 있는 작업에 대해서는 ref 의 사용을 피하세요.</code></p>
+<p>예를 들어, Dialog 컴포넌트에 open()과 close()라는<br>
+메소드를 두는 대신 isOpen 과 같은 prop 을 넘겨주세요.</p>
+<p><code>Ref 의 남용은 금물입니다</code></p>
+<p>여러분의 앱에 “어떤 일이 일어나게”하기 위해<br>
+ref 를 사용하는 쪽으로 마음이 기울 수 있습니다.</p>
+<p>이 때에는, 잠시 작업을 멈추고 앱의 상태를 컴포넌트 계층의<br>
+어떤 부분에서 소유해야 하는지를 다시 한 번 생각해보세요.<br>
+많은 경우, 상태를 “소유”해야 할 적절한 장소는<br>
+계층의 상위에 있는 컴포넌트라는 결론이 날 것입니다.</p>
+<br>
+<h2>Ref 생성하기</h2>
+<p><code>Ref</code> 는 <code>React.createRef()</code>를 통해 생성한 뒤<br>
+React 엘리먼트의 ref 어트리뷰트에 붙여줄 수 있습니다.</p>
+<p><strong style="color:salmon">Ref 는 대개 컴포넌트의 인스턴스가 만들어질 때<br>
+인스턴스의 속성에 저장해주며, 이를 통해 컴포넌트 내부 코드에서 자유롭게 사용</strong>될 수 있습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.myRef = React.createRef();</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">&#123;this.myRef&#125;</span> /&gt;</span>;</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure>
+<br>
+<br>
+<h2>Ref 사용하기</h2>
+<p>render 메소드에서 반환하는 엘리먼트에 ref 가 넘겨지면,<br>
+ref 의 <code>current</code> 속성을 통해 해당 노드에 접근할 수 있게 됩니다.<br></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> node = <span class="keyword">this</span>.myRef.current;</span><br></pre></td></tr></table></figure>
+<p>ref 의 값은 노드의 유형에 따라 달라집니다<br></p>
+<ul>
+<li>
+<p><strong style="color:salmon">HTML 엘리먼트</strong>에 <strong style="color:salmon">ref 어트리뷰트가 사용</strong>되면,<br>
+<strong style="color:salmon">ref 의 current 속성은 DOM 엘리먼트 객체</strong>를 가리킵니다.</p>
+</li>
+<li>
+<p><strong style="color:salmon">클래스 컴포넌트</strong>에 <strong style="color:salmon">ref 어트리뷰트</strong>가 사용되면,<br>
+<strong style="color:salmon">ref 의 current 속성은 해당 컴포넌트로부터 생성된 인스턴스</strong>를 가리킵니다.</p>
+</li>
+<li>
+<p><strong style="color:salmon">함수형 컴포넌트</strong>는 <strong style="color:salmon">인스턴스를 가질 수 없기 때문</strong>에<br>
+<strong style="color:salmon">ref 어트리뷰트 역시 사용할 수 없습니다.</strong></p>
+</li>
+</ul>
+<br>
+<h2>DOM 엘리먼트에 ref 사용하기</h2>
+<p>아래 코드에서는 DOM 노드를 참조하기 위해 ref 를 사용하고 있습니다:<br></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomTextInput</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="comment">// input DOM 엘리먼트에 접근하기 위해 ref를 만들었습니다.</span></span><br><span class="line">    <span class="keyword">this</span>.textInput = React.createRef();</span><br><span class="line">    <span class="keyword">this</span>.focusTextInput = <span class="keyword">this</span>.focusTextInput.bind(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  focusTextInput() &#123;</span><br><span class="line">    <span class="comment">// DOM API를 사용해서 명시적으로 input에 포커스를 두는 코드입니다.</span></span><br><span class="line">    <span class="comment">// 주의: "current" 속성을 사용해 DOM 노드에 접근하고 있습니다.</span></span><br><span class="line">    <span class="keyword">this</span>.textInput.current.focus();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="comment">// &lt;input&gt; ref와 `textInput`이 연결되어 있다는 사실을</span></span><br><span class="line">    <span class="comment">// React한테 알려줍니다.</span></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;input type=<span class="string">"text"</span> ref=&#123;<span class="keyword">this</span>.textInput&#125; /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;input</span><br><span class="line">          type=<span class="string">"button"</span></span><br><span class="line">          value=<span class="string">"Focus the text input"</span></span><br><span class="line">          onClick=&#123;<span class="keyword">this</span>.focusTextInput&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>Reaect 는 컴포넌트가 마운트되면<br>
+textInput 의 current 속성에 DOM 엘리먼트 객체를 할당하며,<br>
+언마운트가 되었을 때 다시 null 로 되돌릴 것입니다.</p>
+<p><code>ref 의 갱신은 componentDidMount 와</code><br>
+<code>componentDidUpdate 라이프사이클 훅 직전에 일어납니다.</code></p>
+<br>
+<h2>클래스 컴포넌트에 ref 사용하기</h2>
+<p>아래 코드에서는 CustomTextInput 을 감싼 새 컴포넌트를 만들어서<br>
+마운트 되자마자 포커스가 이동하도록 했습니다.</p>
+<p>여기서는 CustomTextInput 인스턴스에 접근하기 위해<br>
+ref 를 사용했고 focusTextInput 을 직접 호출해 주었습니다</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AutoFocusTextInput</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.textInput = React.createRef();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="keyword">this</span>.textInput.current.focusTextInput();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">CustomTextInput</span> <span class="attr">ref</span>=<span class="string">&#123;this.textInput&#125;</span> /&gt;</span>;</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>주의할 점은, CustomTextInput 가<br>
+<code>클래스로 선언되었을 때만 이 코드가 동작한다는 점</code>입니다</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomTextInput</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br>
+<h2>Ref 와 함수형 컴포넌트</h2>
+<p><code>함수형 컴포넌트는 인스턴스를 가질 수 없기 때문</code>에<br>
+<code>ref 어트리뷰트 역시 사용할 수 없습니다</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyFunctionalComponent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">input</span> /&gt;</span>;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">class Parent extends React.Component &#123;</span></span><br><span class="line"><span class="xml">  constructor(props) &#123;</span></span><br><span class="line"><span class="xml">    super(props);</span></span><br><span class="line"><span class="xml">    this.textInput = React.createRef();</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">  render() &#123;</span></span><br><span class="line"><span class="xml">    // 이 코드는 동작하지 않습니다!</span></span><br><span class="line">    return &lt;MyFunctionalComponent ref=&#123;this.textInput&#125; /&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>Ref 를 사용하기 위해서는 컴포넌트를 클래스로 바꾸어주어야 합니다.</code><br>
+<code>라이프사이클 메소드나 state 를 사용해야 할 때처럼</code> 말이죠.</p>
+<p>다만, <code>DOM 엘리먼트가 클래스 컴포넌트의 인스턴스에 접근하기 위해</code><br>
+<code>함수형 컴포넌트 안에서 ref 어트리뷰트를 사용하는 것은 얼마든지 가능</code>합니다</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CustomTextInput</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// textInput은 반드시 여기에서 선언되어야 합니다.</span></span><br><span class="line">  <span class="keyword">let</span> textInput = React.createRef();</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handleClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    textInput.current.focus();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;input type=<span class="string">"text"</span> ref=&#123;textInput&#125; /&gt;</span><br><span class="line"></span><br><span class="line">      &lt;input type=<span class="string">"button"</span> value=<span class="string">"Focus the text input"</span> onClick=&#123;handleClick&#125; /&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<br>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+                        <li>
+                            <a href="https://www.facebook.com/profile.php?id=100002528956445&ref=bookmarks" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/leekeunhwan" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; 2018 Moong2. All Rights Reserved.<br></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'moong2sdevblog';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+</body>
+
+</html>
