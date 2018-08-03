@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Moong2&#39;s Blog"/>
+        <meta property="og:title" content="프로그래머스 알고리즘 풀이 - 콜라츠 추측"/>
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>page - Archives: 2018/8 - Moong2&#39;s Blog</title>
+    <title>프로그래머스 알고리즘 풀이 - 콜라츠 추측 - Moong2&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -165,64 +165,109 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3f1d38bbdda690e28a81673c06325075&auto=format&fit=crop&w=3289&q=80')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2018/8</h1>
+                <div class="post-heading">
+                    <h1>프로그래머스 알고리즘 풀이 - 콜라츠 추측</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-08-03
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/TIL/">#TIL</a> <a href="/tags/Algorithm/">#Algorithm</a> <a href="/tags/Programmers/">#Programmers</a> <a href="/tags/JavaScript/">#JavaScript</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Algorithm/">Algorithm</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/08/01/Component-Props/">
-        <h1 class="post-title archive">
-            Component_&_Props (컴포넌트와 프롭)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-01
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/08/01/Elements-Render/">
-        <h1 class="post-title archive">
-            Elements_Render (요소 렌더링)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-01
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2>문제 설명</h2>
+<p>1937 년 Collatz 란 사람에 의해 제기된 이 추측은,<br>
+입력된 수가 짝수라면 2 로 나누고, 홀수라면 3 을 곱하고 1 을 더한 다음,<br>
+결과로 나온 수에 같은 작업을 1 이 될 때까지 반복할 경우<br>
+모든 수가 1 이 된다는 추측입니다.</p>
+<p>예를 들어, 입력된 수가 6 이라면 6→3→10→5→16→8→4→2→1 이 되어<br>
+총 8 번 만에 1 이 됩니다.<br>
+입력된 수가 몇 번 만에 1 이 되는지 반환하는 함수, solution 을 완성해 주세요.</p>
+<p>단, 500 번을 반복해도 1 이 되지 않는다면 –1 을 반환해 주세요.</p>
+<br>
+<h2>제한 사항</h2>
+<p>입력된 수, num 은 1 이상 8000000 미만인 정수입니다.</p>
+<p>입출력 예<br>
+n result<br>
+6 8<br>
+16 4<br>
+626332 -1</p>
+<h3>입출력 예 설명</h3>
+<p>입출력 예 #1<br>
+문제의 설명과 같습니다.</p>
+<p>입출력 예 #2<br>
+16 -&gt; 8 -&gt; 4 -&gt; 2 -&gt; 1 이되어 총 4 번만에 1 이 됩니다.</p>
+<p>입출력 예 #3<br>
+626331 은 500 번을 시도해도 1 이 되지 못하므로 -1 을 리턴해야합니다.</p>
+<h2>문제 풀이</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 정답을 담을 변수 선언</span></span><br><span class="line">  <span class="keyword">let</span> answer = <span class="number">0</span>;</span><br><span class="line">  <span class="comment">// 500번을 반복해봐서 1이 나오면 횟수인 i의 값을 정답으로 1이 안나오면 -1을 정답으로 하면 된다.</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">500</span>; i++) &#123;</span><br><span class="line">    <span class="comment">// num이 1이면</span></span><br><span class="line">    <span class="keyword">if</span> (num == <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="comment">// 정답은 i</span></span><br><span class="line">      answer = i;</span><br><span class="line">      <span class="comment">// 정답 출력</span></span><br><span class="line">      <span class="keyword">return</span> answer;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// num이 홀수면 num은 홀수일때의 식을 짝수면 짝수일 때의 식을 실행한다.</span></span><br><span class="line">    num % <span class="number">2</span> ? (num = num * <span class="number">3</span> + <span class="number">1</span>) : (num /= <span class="number">2</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 500번 다 돌아도 안나왔으므로 answer는 -1</span></span><br><span class="line">  answer = <span class="number">-1</span>;</span><br><span class="line">  <span class="comment">// 정답 출력</span></span><br><span class="line">  <span class="keyword">return</span> answer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-        <li class="previous"><a href="/archives/2018/08/">&larr;  Newer Posts</a></li>
-    
-    
-</ul>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
@@ -290,7 +335,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
