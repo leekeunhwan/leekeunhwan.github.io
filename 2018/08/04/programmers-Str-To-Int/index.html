@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Moong2&#39;s Blog"/>
+        <meta property="og:title" content="programmers-Str-To-Int"/>
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>JavaScript - Moong2&#39;s Blog</title>
+    <title>programmers-Str-To-Int - Moong2&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -165,75 +165,92 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3f1d38bbdda690e28a81673c06325075&auto=format&fit=crop&w=3289&q=80')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>#JavaScript</h1>
+                <div class="post-heading">
+                    <h1>programmers-Str-To-Int</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-08-04
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/TIL/">#TIL</a> <a href="/tags/Algorithm/">#Algorithm</a> <a href="/tags/Programmers/">#Programmers</a> <a href="/tags/JavaScript/">#JavaScript</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Algorithm/">Algorithm</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/08/04/programmers-Str-To-Int/">
-        <h1 class="post-title archive">
-            programmers-Str-To-Int
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-04
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/08/03/programmers-Digit-Sums/">
-        <h1 class="post-title archive">
-            programmers-Digit-Sums
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2>문제 설명</h2>
+<p>strToInt 메소드는 String 형 str 을 매개변수로 받습니다.<br>
+str 을 숫자로 변환한 결과를 반환하도록 strToInt 를 완성하세요.<br>
+예를들어 str 이 1234 이면 1234 를 반환하고, -1234 이면 -1234 를 반환하면 됩니다.<br>
+str 은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력되는 경우는 없습니다.</p>
+<br>
+<br>
+<h2>문제 풀이</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">strToInt</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="number">0</span>; <span class="comment">// 결과를 담을 변수 선언</span></span><br><span class="line">  result = <span class="built_in">parseInt</span>(str); <span class="comment">// 문자열인 매개변수를 숫자로 형변환하여 값으로 할당</span></span><br><span class="line">  <span class="keyword">return</span> result; <span class="comment">// 결과 출력</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 아래는 테스트로 출력해 보기 위한 코드입니다.</span></span><br><span class="line"><span class="built_in">console</span>.log(strToInt(<span class="string">"-1234"</span>));</span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2018/08/03/programmers-Collatz-Guess/">
-        <h1 class="post-title archive">
-            프로그래머스 알고리즘 풀이 - 콜라츠 추측
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
             
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
@@ -301,7 +318,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>

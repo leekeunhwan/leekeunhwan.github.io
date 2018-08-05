@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leekeunhwan.github.io/"/>
-  <updated>2018-08-03T12:10:04.405Z</updated>
+  <updated>2018-08-03T15:21:44.758Z</updated>
   <id>https://leekeunhwan.github.io/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>programmers-Str-To-Int</title>
+    <link href="https://leekeunhwan.github.io/2018/08/04/programmers-Str-To-Int/"/>
+    <id>https://leekeunhwan.github.io/2018/08/04/programmers-Str-To-Int/</id>
+    <published>2018-08-03T15:20:34.000Z</published>
+    <updated>2018-08-03T15:21:44.758Z</updated>
+    
+    <content type="html"><![CDATA[<h2>문제 설명</h2><p>strToInt 메소드는 String 형 str 을 매개변수로 받습니다.<br>str 을 숫자로 변환한 결과를 반환하도록 strToInt 를 완성하세요.<br>예를들어 str 이 1234 이면 1234 를 반환하고, -1234 이면 -1234 를 반환하면 됩니다.<br>str 은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력되는 경우는 없습니다.</p><br><br><h2>문제 풀이</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">strToInt</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="number">0</span>; <span class="comment">// 결과를 담을 변수 선언</span></span><br><span class="line">  result = <span class="built_in">parseInt</span>(str); <span class="comment">// 문자열인 매개변수를 숫자로 형변환하여 값으로 할당</span></span><br><span class="line">  <span class="keyword">return</span> result; <span class="comment">// 결과 출력</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 아래는 테스트로 출력해 보기 위한 코드입니다.</span></span><br><span class="line"><span class="built_in">console</span>.log(strToInt(<span class="string">"-1234"</span>));</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2&gt;문제 설명&lt;/h2&gt;
+&lt;p&gt;strToInt 메소드는 String 형 str 을 매개변수로 받습니다.&lt;br&gt;
+str 을 숫자로 변환한 결과를 반환하도록 strToInt 를 완성하세요.&lt;br&gt;
+예를들어 str 이 1234 이면 1234 를 반환하고,
+      
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="https://leekeunhwan.github.io/categories/Algorithm/"/>
+    
+    
+      <category term="TIL" scheme="https://leekeunhwan.github.io/tags/TIL/"/>
+    
+      <category term="Algorithm" scheme="https://leekeunhwan.github.io/tags/Algorithm/"/>
+    
+      <category term="Programmers" scheme="https://leekeunhwan.github.io/tags/Programmers/"/>
+    
+      <category term="JavaScript" scheme="https://leekeunhwan.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>programmers-Digit-Sums</title>
@@ -314,9 +348,9 @@
     
       <category term="React" scheme="https://leekeunhwan.github.io/tags/React/"/>
     
-      <category term="Conditional Render" scheme="https://leekeunhwan.github.io/tags/Conditional-Render/"/>
-    
       <category term="TIL" scheme="https://leekeunhwan.github.io/tags/TIL/"/>
+    
+      <category term="Conditional Render" scheme="https://leekeunhwan.github.io/tags/Conditional-Render/"/>
     
   </entry>
   
@@ -420,11 +454,11 @@ ReactDOM.render() 을 호출하여 렌더링된 출력을 변경합니다.&lt;br
     
       <category term="React" scheme="https://leekeunhwan.github.io/tags/React/"/>
     
-      <category term="TIL" scheme="https://leekeunhwan.github.io/tags/TIL/"/>
-    
       <category term="Component" scheme="https://leekeunhwan.github.io/tags/Component/"/>
     
       <category term="Props" scheme="https://leekeunhwan.github.io/tags/Props/"/>
+    
+      <category term="TIL" scheme="https://leekeunhwan.github.io/tags/TIL/"/>
     
   </entry>
   
