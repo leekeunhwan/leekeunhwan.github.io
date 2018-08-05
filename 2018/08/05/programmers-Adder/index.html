@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Moong2&#39;s Blog"/>
+        <meta property="og:title" content="programmers-Adder"/>
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>Archives: 2018/8 - Moong2&#39;s Blog</title>
+    <title>programmers-Adder - Moong2&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -165,168 +165,93 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3f1d38bbdda690e28a81673c06325075&auto=format&fit=crop&w=3289&q=80')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2018/8</h1>
+                <div class="post-heading">
+                    <h1>programmers-Adder</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-08-05
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/TIL/">#TIL</a> <a href="/tags/Algorithm/">#Algorithm</a> <a href="/tags/Programmers/">#Programmers</a> <a href="/tags/JavaScript/">#JavaScript</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Algorithm/">Algorithm</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/08/05/programmers-Adder/">
-        <h1 class="post-title archive">
-            programmers-Adder
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-05
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/08/05/programmers-2016-Day/">
-        <h1 class="post-title archive">
-            programmers-2016-Day
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-05
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2>문제 설명</h2>
+<p>adder 함수는 정수 a, b 를 매개변수로 입력받습니다.<br>
+두 수와 두 수 사이에 있는 모든 정수를 더해서 리턴하도록 함수를 완성하세요.<br>
+a 와 b 가 같은 경우는 둘 중 아무 수나 리턴하세요.</p>
+<p>예를들어 a 가 3, b 가 5 이면 12 를 리턴하면 됩니다.<br>
+a, b 는 음수나 0, 양수일 수 있으며 둘의 대소 관계도 정해져 있지 않습니다.</p>
+<br>
+<br>
+<h2>문제 풀이</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">adder</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="number">0</span>; <span class="comment">// 결과를 담을 변수 선언</span></span><br><span class="line">  <span class="keyword">let</span> num1 = a; <span class="comment">// 매개변수 a를 담을 변수 선언</span></span><br><span class="line">  <span class="keyword">let</span> num2 = b; <span class="comment">// 매개변수 b를 담을 변수 선언</span></span><br><span class="line">  <span class="keyword">if</span> (a &lt; b) &#123;</span><br><span class="line">    <span class="comment">// a가 b보다 작을 때</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = num1; i &lt;= num2; i++) &#123;</span><br><span class="line">      <span class="comment">// i는 num1(a)부터 시작해서 num2(b)의 값과 같을 때까지 증가 = 두 수 상이의 모든 수를 구할수 있게</span></span><br><span class="line">      result += i; <span class="comment">// 결과값에 i를 담는다.</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">    <span class="comment">// a가 b보다 클 때</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = num2; i &lt;= num1; i++) &#123;</span><br><span class="line">      <span class="comment">// i는 num2(b)부터 시작해서 num1(a)의 값과 같을 때까지 증가</span></span><br><span class="line">      result += i; <span class="comment">// 결과값에 i를 담는다.</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result; <span class="comment">// 결과출력</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 아래는 테스트로 출력해 보기 위한 코드입니다.</span></span><br><span class="line"><span class="built_in">console</span>.log(adder(<span class="number">3</span>, <span class="number">5</span>)); <span class="comment">//  12</span></span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2018/08/04/programmers-Str-To-Int/">
-        <h1 class="post-title archive">
-            programmers-Str-To-Int
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-04
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/08/03/programmers-Digit-Sums/">
-        <h1 class="post-title archive">
-            programmers-Digit-Sums
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/08/03/programmers-Collatz-Guess/">
-        <h1 class="post-title archive">
-            프로그래머스 알고리즘 풀이 - 콜라츠 추측
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/08/03/Uncontrolled-Components/">
-        <h1 class="post-title archive">
-            Uncontrolled_Components (제어되지 않는 컴포넌트)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/08/03/Context/">
-        <h1 class="post-title archive">
-            Context
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/08/03/Ref-DOM/">
-        <h1 class="post-title archive">
-            Ref_&_DOM
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/08/03/Lift-State/">
-        <h1 class="post-title archive">
-            Lift_State (State 끌어올리기)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/08/02/Form/">
-        <h1 class="post-title archive">
-            Form (리액트에서의 Form)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-02
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/2018/08/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
@@ -394,7 +319,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>

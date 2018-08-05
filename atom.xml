@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leekeunhwan.github.io/"/>
-  <updated>2018-08-05T06:56:47.131Z</updated>
+  <updated>2018-08-05T07:00:01.536Z</updated>
   <id>https://leekeunhwan.github.io/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>programmers-Adder</title>
+    <link href="https://leekeunhwan.github.io/2018/08/05/programmers-Adder/"/>
+    <id>https://leekeunhwan.github.io/2018/08/05/programmers-Adder/</id>
+    <published>2018-08-05T06:58:45.000Z</published>
+    <updated>2018-08-05T07:00:01.536Z</updated>
+    
+    <content type="html"><![CDATA[<h2>문제 설명</h2><p>adder 함수는 정수 a, b 를 매개변수로 입력받습니다.<br>두 수와 두 수 사이에 있는 모든 정수를 더해서 리턴하도록 함수를 완성하세요.<br>a 와 b 가 같은 경우는 둘 중 아무 수나 리턴하세요.</p><p>예를들어 a 가 3, b 가 5 이면 12 를 리턴하면 됩니다.<br>a, b 는 음수나 0, 양수일 수 있으며 둘의 대소 관계도 정해져 있지 않습니다.</p><br><br><h2>문제 풀이</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">adder</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="number">0</span>; <span class="comment">// 결과를 담을 변수 선언</span></span><br><span class="line">  <span class="keyword">let</span> num1 = a; <span class="comment">// 매개변수 a를 담을 변수 선언</span></span><br><span class="line">  <span class="keyword">let</span> num2 = b; <span class="comment">// 매개변수 b를 담을 변수 선언</span></span><br><span class="line">  <span class="keyword">if</span> (a &lt; b) &#123;</span><br><span class="line">    <span class="comment">// a가 b보다 작을 때</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = num1; i &lt;= num2; i++) &#123;</span><br><span class="line">      <span class="comment">// i는 num1(a)부터 시작해서 num2(b)의 값과 같을 때까지 증가 = 두 수 상이의 모든 수를 구할수 있게</span></span><br><span class="line">      result += i; <span class="comment">// 결과값에 i를 담는다.</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">    <span class="comment">// a가 b보다 클 때</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = num2; i &lt;= num1; i++) &#123;</span><br><span class="line">      <span class="comment">// i는 num2(b)부터 시작해서 num1(a)의 값과 같을 때까지 증가</span></span><br><span class="line">      result += i; <span class="comment">// 결과값에 i를 담는다.</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result; <span class="comment">// 결과출력</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 아래는 테스트로 출력해 보기 위한 코드입니다.</span></span><br><span class="line"><span class="built_in">console</span>.log(adder(<span class="number">3</span>, <span class="number">5</span>)); <span class="comment">//  12</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2&gt;문제 설명&lt;/h2&gt;
+&lt;p&gt;adder 함수는 정수 a, b 를 매개변수로 입력받습니다.&lt;br&gt;
+두 수와 두 수 사이에 있는 모든 정수를 더해서 리턴하도록 함수를 완성하세요.&lt;br&gt;
+a 와 b 가 같은 경우는 둘 중 아무 수나 리턴하세요.&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="https://leekeunhwan.github.io/categories/Algorithm/"/>
+    
+    
+      <category term="TIL" scheme="https://leekeunhwan.github.io/tags/TIL/"/>
+    
+      <category term="Algorithm" scheme="https://leekeunhwan.github.io/tags/Algorithm/"/>
+    
+      <category term="Programmers" scheme="https://leekeunhwan.github.io/tags/Programmers/"/>
+    
+      <category term="JavaScript" scheme="https://leekeunhwan.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>programmers-2016-Day</title>
