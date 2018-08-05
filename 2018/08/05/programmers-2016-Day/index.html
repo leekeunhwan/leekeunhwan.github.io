@@ -225,15 +225,20 @@
 2016 년 a 월 b 일은 무슨 요일일까요?<br>
 두 수 a ,b 를 입력받아 2016 년 a 월 b 일이 무슨 요일인지<br>
 리턴하는 함수, solution 을 완성하세요.</p>
-<p>요일의 이름은 일요일부터 토요일까지 각각 SUN,MON,TUE,WED,THU,FRI,SAT 입니다.<br>
-예를 들어 a=5, b=24 라면 5 월 24 일은 화요일이므로 문자열 TUE 를 반환하세요.</p>
+<p>요일의 이름은 일요일부터 토요일까지 각각<br>
+SUN,MON,TUE,WED,THU,FRI,SAT 입니다.</p>
+<p>예를 들어 a=5, b=24 라면 5 월 24 일은<br>
+화요일이므로 문자열 TUE 를 반환하세요.</p>
+<br>
 <h2>제한 조건</h2>
 <p>2016 년은 윤년입니다.<br>
 2016 년 a 월 b 일은 실제로 있는 날입니다.<br>
 (13 월 26 일이나 2 월 45 일같은 날짜는 주어지지 않습니다)</p>
+<br>
 <h2>입출력 예</h2>
 <p>a b result<br>
 5 24 TUE</p>
+<br>
 <h2>문제 풀이</h2>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> day = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2016</span>, a - <span class="number">1</span>, b).toString();</span><br><span class="line">  <span class="comment">// 2016년의 입력된 a월 b일의 요일을 찾아야하므로 new Date함수에 인자로 2016, a-1(0이 1월이기 때문), b를 넣어준 뒤</span></span><br><span class="line">  <span class="comment">// 해당 값은 객체이므로 요일을 자르기 위해 문자열로 만들어준다.</span></span><br><span class="line">  <span class="keyword">let</span> answer = day.slice(<span class="number">0</span>, <span class="number">3</span>).toUpperCase();</span><br><span class="line">  <span class="comment">// 요일 부분을 잘라 대문자로 만들어 준다. (출력되는 답이 대문자이기 때문)</span></span><br><span class="line">  <span class="keyword">return</span> answer;</span><br><span class="line">  <span class="comment">// 정답 출력</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">solution(<span class="number">6</span>, <span class="number">19</span>); <span class="comment">// SUN</span></span><br></pre></td></tr></table></figure>
 
