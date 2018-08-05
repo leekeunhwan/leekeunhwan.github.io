@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Moong2&#39;s Blog"/>
+        <meta property="og:title" content="programmers-2016-Day"/>
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>Archives - Moong2&#39;s Blog</title>
+    <title>programmers-2016-Day - Moong2&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -165,168 +165,99 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3f1d38bbdda690e28a81673c06325075&auto=format&fit=crop&w=3289&q=80')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>programmers-2016-Day</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-08-05
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/TIL/">#TIL</a> <a href="/tags/Algorithm/">#Algorithm</a> <a href="/tags/Programmers/">#Programmers</a> <a href="/tags/JavaScript/">#JavaScript</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Algorithm/">Algorithm</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/08/05/programmers-2016-Day/">
-        <h1 class="post-title archive">
-            programmers-2016-Day
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-05
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/08/04/programmers-Str-To-Int/">
-        <h1 class="post-title archive">
-            programmers-Str-To-Int
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-04
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2>문제 설명</h2>
+<p>2016 년 1 월 1 일은 금요일입니다.<br>
+2016 년 a 월 b 일은 무슨 요일일까요?<br>
+두 수 a ,b 를 입력받아 2016 년 a 월 b 일이 무슨 요일인지<br>
+리턴하는 함수, solution 을 완성하세요.</p>
+<p>요일의 이름은 일요일부터 토요일까지 각각 SUN,MON,TUE,WED,THU,FRI,SAT 입니다.<br>
+예를 들어 a=5, b=24 라면 5 월 24 일은 화요일이므로 문자열 TUE 를 반환하세요.</p>
+<h2>제한 조건</h2>
+<p>2016 년은 윤년입니다.<br>
+2016 년 a 월 b 일은 실제로 있는 날입니다.<br>
+(13 월 26 일이나 2 월 45 일같은 날짜는 주어지지 않습니다)</p>
+<h2>입출력 예</h2>
+<p>a b result<br>
+5 24 TUE</p>
+<h2>문제 풀이</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> day = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2016</span>, a - <span class="number">1</span>, b).toString();</span><br><span class="line">  <span class="comment">// 2016년의 입력된 a월 b일의 요일을 찾아야하므로 new Date함수에 인자로 2016, a-1(0이 1월이기 때문), b를 넣어준 뒤</span></span><br><span class="line">  <span class="comment">// 해당 값은 객체이므로 요일을 자르기 위해 문자열로 만들어준다.</span></span><br><span class="line">  <span class="keyword">let</span> answer = day.slice(<span class="number">0</span>, <span class="number">3</span>).toUpperCase();</span><br><span class="line">  <span class="comment">// 요일 부분을 잘라 대문자로 만들어 준다. (출력되는 답이 대문자이기 때문)</span></span><br><span class="line">  <span class="keyword">return</span> answer;</span><br><span class="line">  <span class="comment">// 정답 출력</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">solution(<span class="number">6</span>, <span class="number">19</span>); <span class="comment">// SUN</span></span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2018/08/03/programmers-Digit-Sums/">
-        <h1 class="post-title archive">
-            programmers-Digit-Sums
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/08/03/programmers-Collatz-Guess/">
-        <h1 class="post-title archive">
-            프로그래머스 알고리즘 풀이 - 콜라츠 추측
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/08/03/Uncontrolled-Components/">
-        <h1 class="post-title archive">
-            Uncontrolled_Components (제어되지 않는 컴포넌트)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/08/03/Context/">
-        <h1 class="post-title archive">
-            Context
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/08/03/Ref-DOM/">
-        <h1 class="post-title archive">
-            Ref_&_DOM
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/08/03/Lift-State/">
-        <h1 class="post-title archive">
-            Lift_State (State 끌어올리기)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/08/02/Form/">
-        <h1 class="post-title archive">
-            Form (리액트에서의 Form)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-02
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/08/01/List-Key/">
-        <h1 class="post-title archive">
-            List_&_Key (리스트와 키)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-01
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
@@ -394,7 +325,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
