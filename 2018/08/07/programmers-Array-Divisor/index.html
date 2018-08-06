@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Moong2&#39;s Blog"/>
+        <meta property="og:title" content="programmers-Array-Divisor"/>
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>Archives: 2018 - Moong2&#39;s Blog</title>
+    <title>programmers-Array-Divisor - Moong2&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -165,168 +165,112 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3f1d38bbdda690e28a81673c06325075&auto=format&fit=crop&w=3289&q=80')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2018</h1>
+                <div class="post-heading">
+                    <h1>programmers-Array-Divisor</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-08-07
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/TIL/">#TIL</a> <a href="/tags/Algorithm/">#Algorithm</a> <a href="/tags/Programmers/">#Programmers</a> <a href="/tags/JavaScript/">#JavaScript</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Algorithm/">Algorithm</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/08/07/programmers-Array-Divisor/">
-        <h1 class="post-title archive">
-            programmers-Array-Divisor
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-07
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/08/05/programmers-Alpha-String46/">
-        <h1 class="post-title archive">
-            programmers-Alpha-String46
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-05
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2>문제 설명</h2>
+<p>array 의 각 element 중 divisor 로 나누어 떨어지는 값을<br>
+오름차순으로 정렬한 배열을 반환하는 함수, solution 을 작성해주세요.<br>
+divisor 로 나누어 떨어지는 element 가 하나도 없다면<br>
+배열에 -1 을 담아 반환하세요.</p>
+<br>
+<h2>제한사항</h2>
+<p>arr 은 자연수를 담은 배열입니다.<br>
+정수 i, j 에 대해 i ≠ j 이면 arr[i] ≠ arr[j] 입니다.<br>
+divisor 는 자연수입니다.<br>
+array 는 길이 1 이상인 배열입니다.</p>
+<br>
+<h2>입출력 예</h2>
+<p>arr divisor return<br>
+[5, 9, 7, 10] 5 [5, 10][2, 36, 1, 3] 1 [1, 2, 3, 36][3,2,6] 10 [-1]</p>
+<br>
+<h3>입출력 예 설명</h3>
+<p>입출력 예#1<br>
+arr 의 원소 중 5 로 나누어 떨어지는 원소는 5 와 10 입니다.<br>
+따라서 [5, 10]을 리턴합니다.</p>
+<p>입출력 예#2<br>
+arr 의 모든 원소는 1 으로 나누어 떨어집니다.<br>
+원소를 오름차순으로 정렬해 [1, 2, 3, 36]을 리턴합니다.</p>
+<p>입출력 예#3<br>
+3, 2, 6 은 10 으로 나누어 떨어지지 않습니다.<br>
+나누어 떨어지는 원소가 없으므로 [-1]을 리턴합니다.</p>
+<br>
+<h2>문제 풀이</h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">arr, divisor</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> answer = []; <span class="comment">// 정답을 배열형식으로 보여줘야 하므로 answer의 값으로 빈배열을 넣어준다.</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    <span class="comment">// 배열안의 요소수만큼 i를 증가</span></span><br><span class="line">    <span class="keyword">if</span> (arr[i] % divisor === <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="comment">// 배열의 요소를 divisor로 나누어진다면</span></span><br><span class="line">      answer.push(arr[i]); <span class="comment">// 나누어진 배열의 요소는 answer의 배열안으로 넣어준다.</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  answer.length == <span class="number">0</span> ? answer.push(<span class="number">-1</span>) : <span class="string">""</span>; <span class="comment">// answer가 만약 나누어진 요소가 없을 경우 -1을 push해준다.</span></span><br><span class="line">  answer.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 그리고 배열의 요소를 오름차순으로 정렬</span></span><br><span class="line">    <span class="keyword">return</span> a - b;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> answer; <span class="comment">// 정답 출력</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">solution([<span class="number">3</span>, <span class="number">25</span>, <span class="number">4</span>], <span class="number">7</span>); <span class="comment">// [-1]</span></span><br><span class="line">solution([<span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">10</span>], <span class="number">1</span>); <span class="comment">// [1,3,5,10]</span></span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2018/08/05/programmers-Adder/">
-        <h1 class="post-title archive">
-            programmers-Adder
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-05
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/08/05/programmers-2016-Day/">
-        <h1 class="post-title archive">
-            programmers-2016-Day
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-05
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/08/04/programmers-Str-To-Int/">
-        <h1 class="post-title archive">
-            programmers-Str-To-Int
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-04
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/08/03/programmers-Digit-Sums/">
-        <h1 class="post-title archive">
-            programmers-Digit-Sums
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/08/03/programmers-Collatz-Guess/">
-        <h1 class="post-title archive">
-            프로그래머스 알고리즘 풀이 - 콜라츠 추측
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/08/03/Uncontrolled-Components/">
-        <h1 class="post-title archive">
-            Uncontrolled_Components (제어되지 않는 컴포넌트)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/08/03/Context/">
-        <h1 class="post-title archive">
-            Context
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/08/03/Ref-DOM/">
-        <h1 class="post-title archive">
-            Ref_&_DOM
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-08-03
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/2018/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
@@ -394,7 +338,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
